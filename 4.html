@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ans(arr) {
+    for (i = 1; i <= arr.length-1; i++) {
+        let j = Math.floor(Math.random() * i);
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    return arr;
+}
+
+function show() {
+    let n = prompt('enter size of array')
+    let arr = []
+        for(let i=0; i<n; i++)
+            arr[i] = prompt('enter array element')
+    document.write('original array: ')
+    for(let i=0; i<n; i++)
+        document.write(arr[i])
+    var arr1 = ans(arr);
+    document.write('<br/>')
+    document.write('After shuffling: ', arr1);
+}
+show();
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>calculate difference between two dates in year javascript</title>
+</head>
+<body>
+  <script type = "text/javascript">
+   function monthDiff(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months;
+}
+
+function diffYear(date1, date2){
+    var diffYear =(date2.getTime() - date1.getTime()) / 1000;
+       diffYear /= (60 * 60 * 24);
+      return Math.abs(Math.round(diffYear/365.25));
+}
+
+const diffDays = (date, otherDate) => Math.ceil(Math.abs(date - otherDate) / (1000 * 60 * 60 * 24));
+
+date1 = new Date('2014-12-19')
+date2 = new Date('2020-01-01')
+
+document.write(diffDays(date2, date1))
+document.write('<br/>')
+document.write(diffYear(date1, date2))
+document.write('<br/>')
+document.write(monthDiff(date1, date2))
+  </script>  
+</body>
+</html>

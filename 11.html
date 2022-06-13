@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        s = prompt('enter main string')
+        i1 = prompt('enter a string to be inserted');
+        pos = prompt('enter position')
+        if(pos != ''){
+        s1 = '';
+        for (i = 0; i < s.length; i++) {
+            if (i == pos) s1 = s.slice(0, pos) + i1 + s.slice(pos - 1);
+        }
+        document.write(s1);
+    }
+    else 
+    {
+        var s1 = '';
+
+        for (i = 0; i < i1.length; i++) {
+            s1 = s.replace(s.substr(0, i1.length), i1)
+        }
+        document.write(s1);
+    }
+    </script>
+</body>
+</html>

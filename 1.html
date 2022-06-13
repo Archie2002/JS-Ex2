@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = []
+        let m = prompt('enter array size')
+        var n = prompt('enter n value: ')
+        for(let i=0; i<m; i++){
+            arr[i] = prompt('enter array element: ')
+        }
+        
+    document.write('original array: ')
+    for(let i=0; i<m; i++)
+    document.write(arr[i])
+        let a1 = [];
+    let a2 = [];
+    let j = 1;
+    while (j <= n) {
+        a1.push(arr.shift());
+        a2.push(arr.pop());
+        j++;
+    }
+    document.write('<br/>')
+    document.write('first m elements: '+a1);
+    document.write('<br/>')
+    document.write('last m elements: '+a2);
+    </script>
+</body>
+</html>
+
+

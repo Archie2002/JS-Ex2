@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let n = prompt('enter array 1 size: ');
+        let arr1 = []
+        for(let i=0; i<n; i++)
+            arr1[i] = prompt('enter array element')
+
+        let m = prompt('enter array 2 size: ');
+        let arr2 = []
+        for(let i=0; i<m; i++)
+            arr2[i] = prompt('enter array element')
+      
+        document.write('array1 is: ')
+        for(let i=0; i<n; i++)
+            document.write(arr1[i]);
+        
+        document.write('<br/>');
+
+        document.write('array2 is: ')
+        for(let i=0; i<m; i++)
+            document.write(arr2[i]);
+
+        document.write('<br/>');
+
+        function uni(a, b) {
+            // s = a.concat(b);
+            // let s1 = new Set(s);
+            // document.write(s1)
+            var union = [...new Set([...a, ...b])];
+            document.write(union)
+        }
+
+        function intersec(a, b) {
+            s = [];
+            for (i = 0; i < a.length; i++) {
+                for (j = 0; j < b.length; j++) {
+                    if (a[i] == b[j]) s.push(a[i]);
+                }
+            }
+            return s;
+        }
+
+        function diff(a, b) {
+            var s = arr1.filter(x => !arr2.includes(x))
+            return s;
+        }
+        document.write('union of two array: ')
+        uni(arr1, arr2);
+        document.write('<br/>');
+        document.write('Intersection: ' + intersec(arr1, arr2));
+        document.write('<br/>');
+        document.write('Difference: ' + diff(arr1, arr2));
+    </script>
+</body>
+</html>
+

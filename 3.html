@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let n = prompt('enter size of array')
+        let arr = []
+        for(let i=0; i<n; i++)
+            arr[i] = prompt('enter array element')
+        let freq = new Map();
+        let ans, mx = 0;
+        arr.forEach(item => {
+            if(freq.has(item) == false) 
+                freq.set(item, 0);
+
+            freq.set(item, freq.get(item)+1);
+
+            if(freq.get(item) > mx) {
+                mx = freq.get(item);
+                ans = item;
+            }
+        });
+        document.write('original array: ')
+        for(let i=0; i<n; i++)
+            document.write(arr[i]);
+        document.write('<br/>')
+        document.write(ans);
+
+    </script>
+</body>
+</html>
+

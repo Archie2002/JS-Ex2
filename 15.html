@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                
+        let arr = [ 
+            {name:  "Jack" , age : 23}, 
+            {name:  "Sam" , age : 12},  
+            {name:  "Max" , age : 20} 
+            ]
+
+
+        let userRes = prompt('enter your choice from 1 or 2: ')
+
+        if(userRes==1) inst();
+        if(userRes==2) dlt();
+
+        function inst(){
+        pos=prompt('enter position at which to insert');
+        if(pos>arr.length) alert('enter valid position')
+        arr.splice(pos, 0 , {name: 'Danial', age: 56})
+        document.write('element ' + Object.values(arr[pos]) + ' inserted at position ' + pos)
+        document.write('<br/>')
+        document.write('Updated array is: ')
+        for(i=0; i<arr.length; i++)
+            document.write(Object.values(arr[i]) + '   ')
+        }
+
+        function dlt(){
+            pos= prompt('enter position at which to delete')
+        if(pos>arr.length+1) alert('enter valid position')
+            arr.splice(pos,1)
+            document.write('element ' + Object.values(arr[pos]) + ' deleted at position ' + pos)
+        document.write('<br/>')
+        document.write('Updated array is: ')
+        for(i=0; i<arr.length; i++)
+            document.write(Object.values(arr[i]) + '   ')
+        }
+    </script>
+</body>
+</html>

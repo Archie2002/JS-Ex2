@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        l = prompt('enter a number');
+        s11 = prompt('enter string');
+        s = s11.split(' ').join('')
+        function ans(s) {
+            i = 0;
+            s1 = [];
+            for (i = 0; i < s.length; i++) {
+                if (i % 2 == 0) s1 = s1 + s.substr(i, l) + ' ';
+            }
+            return s1;
+        }
+
+        aa = ans(s);
+
+        document.write(aa.split(' '));
+
+    </script>
+</body>
+</html>
